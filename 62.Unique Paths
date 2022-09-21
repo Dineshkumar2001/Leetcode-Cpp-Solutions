@@ -1,0 +1,17 @@
+class Solution {
+public:
+    
+    /*Approch:The recursion takes exponential time complexity
+    where the optimal solution but dynamic programming gives quadradic 
+    so this is optimal solution*/
+    
+    int uniquePaths(int m, int n) {
+        int N=m+n-2;
+        int r=m-1;
+        double res=1;
+        for(int i=1;i<=r;i++){
+            res = res * ( N - r + i ) / i;
+        }
+        return (int)res;
+    }
+};
