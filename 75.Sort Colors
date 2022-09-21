@@ -1,0 +1,23 @@
+class Solution {
+public:
+    //Algorithm used : Dutch National Flag Algorithm
+    void sortColors(vector<int>& nums) {
+        int lp=0;
+        int mid=0;
+        int hp=nums.size()-1;
+        while(mid<=hp){
+            if(nums[mid]==0){
+                swap(nums[lp],nums[mid]);
+                lp++;
+                mid++;
+            }
+            else if(nums[mid]==1){
+                mid++;
+            }
+            else if(nums[mid]==2){
+                swap(nums[mid],nums[hp]);
+                hp--;
+            }
+        }
+    }
+};
